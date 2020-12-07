@@ -70,26 +70,23 @@ export default function Login() {
     }, [formValues]);
 
     return (
-
         <div className="login container">
-            <form className="form container" onSubmit={onSubmit}>
+            <form className="form container" onSubmit={onSubmit} disabled={disabled}>
                 <div id="login-title">
                     <h2>Log In</h2>
                 </div>
                 <div className="login form">
                     <h4>Login Information</h4>
-                    <label>
-                        Username:
-              <input
+                    <label> Username:
+                        <input
                             value={formValues.username}
                             onChange={onInputChange}
                             name="username"
                             type="text"
                         />
                     </label>
-                    <label>
-                        Password:
-              <input
+                    <label> Password:
+                        <input
                             value={formValues.password}
                             onChange={onInputChange}
                             name="password"
