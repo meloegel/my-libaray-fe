@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { NavLink } from 'react-router-dom'
-import './App.css';
+import './styles/sass/index.scss';
 
 
 import UserProfile from './components/UserProfile'
