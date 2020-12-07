@@ -69,11 +69,6 @@ export default function Registration() {
             .catch((err) => {
                 console.log(err);
             });
-        setFormValues({
-            username: "",
-            password: "",
-            email: "",
-        });
     };
 
     return (
@@ -84,28 +79,25 @@ export default function Registration() {
                 </div>
                 <div className="form inputs">
                     <h4>General Information</h4>
-                    <form className="form container" onSubmit={onSubmit}>
-                        <label>
-                            Username:
-            <input
+                    <form className="form container" onSubmit={onSubmit} disabled={disabled}>
+                        <label> Username:
+                            <input
                                 value={formValues.username}
                                 onChange={onInputChange}
                                 name="username"
                                 type="text"
                             />
                         </label>
-                        <label>
-                            Password:
-            <input
+                        <label> Password:
+                            <input
                                 value={formValues.password}
                                 onChange={onInputChange}
                                 name="password"
                                 type="text"
                             />
                         </label>
-                        <label>
-                            Email:
-            <input
+                        <label> Email:
+                            <input
                                 value={formValues.email}
                                 onChange={onInputChange}
                                 name="email"
