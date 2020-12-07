@@ -48,6 +48,12 @@ export default function Registration() {
             [name]: value,
         });
     };
+    useEffect(() => {
+        signUpSchema.isValid(formValues).then((valid) => {
+            setDisabled(!valid);
+        });
+    }, [formValues]);
+
 
     const onSubmit = (evt) => {
         evt.preventDefault();
