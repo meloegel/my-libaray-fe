@@ -79,68 +79,68 @@ export default function Registration() {
 
     return (
         <div className="signup">
-            <div>
-                <div className="form inputs">
-                    <Card body bg='info' className='formCard'>
-                        <form className="form container" onSubmit={onSubmit} disabled={disabled}>
-                            <h4>Registration</h4>
-                            <InputGroup >
-                                <FormControl
-                                    placeholder="Username"
-                                    aria-label="Username"
-                                    aria-describedby="basic-addon1"
-                                    value={formValues.username}
-                                    onChange={onInputChange}
-                                    name="username"
-                                    type="text"
-                                />
-                                <FormControl
-                                    placeholder="Password"
-                                    aria-label="Password"
-                                    aria-describedby="basic-addon1"
-                                    value={formValues.password}
-                                    onChange={onInputChange}
-                                    name="password"
-                                    type="text"
-                                />
-                                <FormControl
-                                    placeholder="Email"
-                                    aria-label="Email"
-                                    aria-describedby="basic-addon1"
-                                    value={formValues.email}
-                                    onChange={onInputChange}
-                                    name="email"
-                                    type="email"
-                                />
-                                <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon3">
-                                        https://
-                                </InputGroup.Text>
-                                </InputGroup.Prepend>
-                                <FormControl
-                                    placeholder="Avatar"
-                                    aria-label="Avatar"
-                                    aria-describedby="basic-addon1"
-                                    value={formValues.avatar}
-                                    onChange={onInputChange}
-                                    name="avatar"
-                                    type="text"
-                                />
-                                <Button className="submit" variant='primary'>Submit</Button>{' '}
-                            </InputGroup>
-
-                            <div>
-                                <div className="errors">
-                                    <div>{formErrors.username}</div>
-                                    <div>{formErrors.password}</div>
-                                    <div>{formErrors.email}</div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </Card>
-                </div>
-            </div>
+            <Card body bg='info' className='formCard'>
+                <h4>Registration</h4>
+                <form className='regForm' onSubmit={onSubmit} disabled={disabled}>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            value={formValues.username}
+                            onChange={onInputChange}
+                            name="username"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Password"
+                            aria-label="Password"
+                            aria-describedby="basic-addon1"
+                            value={formValues.password}
+                            onChange={onInputChange}
+                            name="password"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Email"
+                            aria-label="Email"
+                            aria-describedby="basic-addon1"
+                            value={formValues.email}
+                            onChange={onInputChange}
+                            name="email"
+                            type="email"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <InputGroup.Prepend className='inputPrepend'>
+                            <InputGroup.Text id="basic-addon3">
+                                https://
+                                        </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            placeholder="Avatar"
+                            aria-label="Avatar"
+                            aria-describedby="basic-addon1"
+                            value={formValues.avatar}
+                            onChange={onInputChange}
+                            name="avatar"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <Button className="submit" variant='primary'>Submit</Button>
+                    <div>
+                        <div className="errors">
+                            <div>{formErrors.username}</div>
+                            <div>{formErrors.password}</div>
+                            <div>{formErrors.email}</div>
+                        </div>
+                    </div>
+                </form>
+            </Card>
         </div>
     );
 }

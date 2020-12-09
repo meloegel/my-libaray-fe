@@ -1,7 +1,23 @@
 // Registration //
 .formCard {
-  width: 70%;
+  width: 40%;
   margin: 0 auto;
+}
+.regForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input {
+  width: 45%;
+  margin-bottom: 1rem;
+}
+.inputPrepend {
+  margin-bottom: 1rem;
+}
+.submit {
+  width: 8rem;
 }
 
 // Login //
