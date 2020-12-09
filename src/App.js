@@ -7,7 +7,7 @@ import './styles/sass/index.scss';
 import UserProfile from './components/UserProfile'
 
 import Login from './components/Login'
-import SignUp from './components/SignUp'
+import Registration from './components/Registration'
 import PrivateRoute from './components/PrivateRoute'
 import BookList from './components/MyLibraryBookList'
 import AddBook from './components/AddBook'
@@ -34,7 +34,7 @@ function App() {
         <UserContext.Provider value={{ userId, setUserId }}>
           <div className="App">
             <nav>
-              <NavLink to="/">Sign Up</NavLink>
+              <NavLink to="/">Register</NavLink>
               <NavLink to="/login" >Sign In</NavLink>
               <NavLink to='/account'>Account</NavLink>
               <NavLink to='/books'>Books</NavLink>
@@ -42,7 +42,7 @@ function App() {
             </nav>
             <div>
               <Switch>
-                <Route exact path='/' component={SignUp} />
+                <Route exact path='/' component={Registration} />
                 <Route path='/login' component={Login} />
                 <PrivateRoute path='/account' component={UserProfile} />
                 <PrivateRoute path='/books' component={BookList} />

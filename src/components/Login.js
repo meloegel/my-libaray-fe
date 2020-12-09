@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import loginSchema from "../validation/loginSchema";
 import * as yup from "yup";
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 const initialFormValues = {
     username: '',
@@ -72,27 +74,26 @@ export default function Login() {
     return (
         <div className="login container">
             <form className="form container" onSubmit={onSubmit} disabled={disabled}>
-                <div id="login-title">
-                    <h2>Log In</h2>
-                </div>
-                <div className="login form">
-                    <h4>Login Information</h4>
-                    <label> Username:
-                        <input
-                            value={formValues.username}
-                            onChange={onInputChange}
-                            name="username"
-                            type="text"
-                        />
-                    </label>
-                    <label> Password:
-                        <input
-                            value={formValues.password}
-                            onChange={onInputChange}
-                            name="password"
-                            type="text"
-                        />
-                    </label>
+                <h4>Login Information</h4>
+                <InputGroup >
+                    <FormControl
+                        placeholder="Username"
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        value={formValues.username}
+                        onChange={onInputChange}
+                        name="username"
+                        type="text"
+                    />
+                    <FormControl
+                        placeholder="Password"
+                        aria-label="Password"
+                        aria-describedby="basic-addon1"
+                        value={formValues.password}
+                        onChange={onInputChange}
+                        name="password"
+                        type="text"
+                    />
                     <div id="login-btn">
                         <button className="submit">Login</button>
                     </div>
@@ -100,7 +101,7 @@ export default function Login() {
                         <div>{formErrors.username}</div>
                         <div>{formErrors.password}</div>
                     </div>
-                </div>
+                </InputGroup>
             </form>
         </div>
     );
