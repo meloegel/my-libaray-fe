@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+import Card from 'react-bootstrap/Card'
 
 const initialFormValues = {
     username: "",
@@ -80,44 +81,46 @@ export default function Registration() {
                     <h2>Sign Up</h2>
                 </div>
                 <div className="form inputs">
-                    <h4>General Information</h4>
-                    <InputGroup className="mb-3" onSubmit={onSubmit} disabled={disabled}>
-                        <FormControl
-                            placeholder="Username"
-                            aria-label="Username"
-                            aria-describedby="basic-addon1"
-                            value={formValues.username}
-                            onChange={onInputChange}
-                            name="username"
-                            type="text"
-                        />
-                        <FormControl
-                            placeholder="Password"
-                            aria-label="Password"
-                            aria-describedby="basic-addon1"
-                            value={formValues.password}
-                            onChange={onInputChange}
-                            name="password"
-                            type="text"
-                        />
-                        <FormControl
-                            placeholder="Email"
-                            aria-label="Email"
-                            aria-describedby="basic-addon1"
-                            value={formValues.email}
-                            onChange={onInputChange}
-                            name="email"
-                            type="email"
-                        />
-                        <button className="submit">Submit</button>
-                    </InputGroup>
-                    <div>
-                        <div className="errors">
-                            <div>{formErrors.username}</div>
-                            <div>{formErrors.password}</div>
-                            <div>{formErrors.email}</div>
+                    <Card border='black' bg='dark' style={{ width: '45rem', border: '2px solid black', margin: '0 auto' }} >
+                        <h4>General Information</h4>
+                        <InputGroup className="mb-3" onSubmit={onSubmit} disabled={disabled}>
+                            <FormControl
+                                placeholder="Username"
+                                aria-label="Username"
+                                aria-describedby="basic-addon1"
+                                value={formValues.username}
+                                onChange={onInputChange}
+                                name="username"
+                                type="text"
+                            />
+                            <FormControl
+                                placeholder="Password"
+                                aria-label="Password"
+                                aria-describedby="basic-addon1"
+                                value={formValues.password}
+                                onChange={onInputChange}
+                                name="password"
+                                type="text"
+                            />
+                            <FormControl
+                                placeholder="Email"
+                                aria-label="Email"
+                                aria-describedby="basic-addon1"
+                                value={formValues.email}
+                                onChange={onInputChange}
+                                name="email"
+                                type="email"
+                            />
+                            <button className="submit">Submit</button>
+                        </InputGroup>
+                        <div>
+                            <div className="errors">
+                                <div>{formErrors.username}</div>
+                                <div>{formErrors.password}</div>
+                                <div>{formErrors.email}</div>
+                            </div>
                         </div>
-                    </div>
+                    </Card>
                 </div>
             </div>
         </div>
