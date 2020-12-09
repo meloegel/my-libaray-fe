@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from "react-router-dom";
-import { axiosWithAuth } from '../utils/axiosWithAuth'
-import UserContext from '../contexts/UserContext'
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import UserContext from '../../contexts/UserContext'
 
 const initialDetails = {
     username: '',

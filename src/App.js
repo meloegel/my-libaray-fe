@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom'
 import './styles/sass/index.scss';
 
 
-import UserProfile from './components/UserProfile'
+import UserProfile from './components/UserProfile/UserProfile'
 
-import Login from './components/Login'
-import Registration from './components/Registration'
+import Login from './components/UserProfile/Login'
+import Registration from './components/UserProfile/Registration'
 import PrivateRoute from './components/PrivateRoute'
 import BookList from './components/MyLibraryBookList'
 import AddBook from './components/AddBook'

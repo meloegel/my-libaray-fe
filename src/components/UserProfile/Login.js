@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
-import { axiosWithAuth } from '../utils/axiosWithAuth'
-import loginSchema from "../validation/loginSchema";
+import { axiosWithAuth } from '../../utils/axiosWithAuth'
+import loginSchema from "../../validation/loginSchema";
 import * as yup from "yup";
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialFormValues = {
     username: '',
@@ -95,7 +97,7 @@ export default function Login() {
                         type="text"
                     />
                     <div id="login-btn">
-                        <button className="submit">Login</button>
+                        <Button className="submit">Login</Button>
                     </div>
                     <div className="errors">
                         <div>{formErrors.username}</div>
