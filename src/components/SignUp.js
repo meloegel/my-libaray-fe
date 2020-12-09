@@ -3,6 +3,8 @@ import signUpSchema from "../validation/signUpSchema";
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 const initialFormValues = {
     username: "",
@@ -79,40 +81,43 @@ export default function Registration() {
                 </div>
                 <div className="form inputs">
                     <h4>General Information</h4>
-                    <form className="form container" onSubmit={onSubmit} disabled={disabled}>
-                        <label> Username:
-                            <input
-                                value={formValues.username}
-                                onChange={onInputChange}
-                                name="username"
-                                type="text"
-                            />
-                        </label>
-                        <label> Password:
-                            <input
-                                value={formValues.password}
-                                onChange={onInputChange}
-                                name="password"
-                                type="text"
-                            />
-                        </label>
-                        <label> Email:
-                            <input
-                                value={formValues.email}
-                                onChange={onInputChange}
-                                name="email"
-                                type="email"
-                            />
-                        </label>
-                        <div>
-                            <div className="errors">
-                                <div>{formErrors.username}</div>
-                                <div>{formErrors.password}</div>
-                                <div>{formErrors.email}</div>
-                            </div>
-                            <button className="submit">Submit</button>
+                    <InputGroup className="mb-3" onSubmit={onSubmit} disabled={disabled}>
+                        <FormControl
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            value={formValues.username}
+                            onChange={onInputChange}
+                            name="username"
+                            type="text"
+                        />
+                        <FormControl
+                            placeholder="Password"
+                            aria-label="Password"
+                            aria-describedby="basic-addon1"
+                            value={formValues.password}
+                            onChange={onInputChange}
+                            name="password"
+                            type="text"
+                        />
+                        <FormControl
+                            placeholder="Email"
+                            aria-label="Email"
+                            aria-describedby="basic-addon1"
+                            value={formValues.email}
+                            onChange={onInputChange}
+                            name="email"
+                            type="email"
+                        />
+                        <button className="submit">Submit</button>
+                    </InputGroup>
+                    <div>
+                        <div className="errors">
+                            <div>{formErrors.username}</div>
+                            <div>{formErrors.password}</div>
+                            <div>{formErrors.email}</div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
