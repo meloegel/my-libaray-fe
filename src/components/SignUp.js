@@ -5,12 +5,12 @@ import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
-import Card from 'react-bootstrap/Card'
 
 const initialFormValues = {
     username: "",
     password: "",
     email: "",
+    avatar: ""
 };
 const initialFormErrors = {
     username: "",
@@ -77,13 +77,10 @@ export default function Registration() {
     return (
         <div className="signup">
             <div>
-                <div>
-                    <h2>Sign Up</h2>
-                </div>
                 <div className="form inputs">
-                    <Card border='black' bg='dark' style={{ width: '45rem', border: '2px solid black', margin: '0 auto' }} >
-                        <h4>General Information</h4>
-                        <InputGroup className="mb-3" onSubmit={onSubmit} disabled={disabled}>
+                    <form className="form container" onSubmit={onSubmit} disabled={disabled}>
+                        <h4>Registration</h4>
+                        <InputGroup >
                             <FormControl
                                 placeholder="Username"
                                 aria-label="Username"
@@ -111,16 +108,27 @@ export default function Registration() {
                                 name="email"
                                 type="email"
                             />
-                            <button className="submit">Submit</button>
+
+                            <FormControl
+                                placeholder="Avatar"
+                                aria-label="Avatar"
+                                aria-describedby="basic-addon1"
+                                value={formValues.avatar}
+                                onChange={onInputChange}
+                                name="avatar"
+                                type="text"
+                            />
                         </InputGroup>
+
                         <div>
                             <div className="errors">
                                 <div>{formErrors.username}</div>
                                 <div>{formErrors.password}</div>
                                 <div>{formErrors.email}</div>
                             </div>
+                            <button className="submit">Submit</button>
                         </div>
-                    </Card>
+                    </form>
                 </div>
             </div>
         </div>
