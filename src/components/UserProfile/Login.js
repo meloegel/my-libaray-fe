@@ -6,6 +6,7 @@ import * as yup from "yup";
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialFormValues = {
@@ -75,36 +76,38 @@ export default function Login() {
 
     return (
         <div className="login container">
-            <form className="form container" onSubmit={onSubmit} disabled={disabled}>
+            <Card body bg='info' className='formCardLog'>
                 <h4>Login Information</h4>
-                <InputGroup >
-                    <FormControl
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                        value={formValues.username}
-                        onChange={onInputChange}
-                        name="username"
-                        type="text"
-                    />
-                    <FormControl
-                        placeholder="Password"
-                        aria-label="Password"
-                        aria-describedby="basic-addon1"
-                        value={formValues.password}
-                        onChange={onInputChange}
-                        name="password"
-                        type="text"
-                    />
-                    <div id="login-btn">
-                        <Button className="submit">Login</Button>
-                    </div>
+                <form className='form' onSubmit={onSubmit} disabled={disabled}>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Username"
+                            aria-label="Username"
+                            aria-describedby="basic-addon1"
+                            value={formValues.username}
+                            onChange={onInputChange}
+                            name="username"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Password"
+                            aria-label="Password"
+                            aria-describedby="basic-addon1"
+                            value={formValues.password}
+                            onChange={onInputChange}
+                            name="password"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <Button className="submit">Login</Button>
                     <div className="errors">
                         <div>{formErrors.username}</div>
                         <div>{formErrors.password}</div>
                     </div>
-                </InputGroup>
-            </form>
-        </div>
+                </form>
+            </Card>
+        </div >
     );
 }

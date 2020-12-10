@@ -1,16 +1,16 @@
 // Registration //
-.formCard {
-  width: 40%;
+.formCardReg {
+  width: 35%;
   margin: 0 auto;
 }
-.regForm {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #input {
-  width: 45%;
+  width: 55%;
   margin-bottom: 1rem;
 }
 .inputPrepend {
@@ -21,5 +21,10 @@
 }
 
 // Login //
+
+.formCardLog {
+  width: 45%;
+  margin: 0 auto;
+}
 
 // User Profile //

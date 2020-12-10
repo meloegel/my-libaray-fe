@@ -79,9 +79,9 @@ export default function Registration() {
 
     return (
         <div className="signup">
-            <Card body bg='info' className='formCard'>
+            <Card body bg='info' className='formCardReg'>
                 <h4>Registration</h4>
-                <form className='regForm' onSubmit={onSubmit} disabled={disabled}>
+                <form className='form' onSubmit={onSubmit} disabled={disabled}>
                     <InputGroup id='input'>
                         <FormControl
                             placeholder="Username"
@@ -132,12 +132,10 @@ export default function Registration() {
                         />
                     </InputGroup>
                     <Button className="submit" variant='primary'>Submit</Button>
-                    <div>
-                        <div className="errors">
-                            <div>{formErrors.username}</div>
-                            <div>{formErrors.password}</div>
-                            <div>{formErrors.email}</div>
-                        </div>
+                    <div className="errors">
+                        <div>{formErrors.username}</div>
+                        <div>{formErrors.password}</div>
+                        <div>{formErrors.email}</div>
                     </div>
                 </form>
             </Card>
