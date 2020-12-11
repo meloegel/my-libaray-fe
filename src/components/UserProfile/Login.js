@@ -78,7 +78,7 @@ export default function Login() {
         <div className="login container">
             <Card body bg='info' className='formCardLog'>
                 <h4>Login Information</h4>
-                <form className='form' onSubmit={onSubmit} disabled={disabled}>
+                <form className='form'>
                     <InputGroup id='input'>
                         <FormControl
                             placeholder="Username"
@@ -101,7 +101,7 @@ export default function Login() {
                             type="text"
                         />
                     </InputGroup>
-                    <Button className="submit">Login</Button>
+                    <Button className="submit" onClick={onSubmit} disabled={disabled}>Login</Button>
                     <div className="errors">
                         <div>{formErrors.username}</div>
                         <div>{formErrors.password}</div>

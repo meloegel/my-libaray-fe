@@ -19,6 +19,7 @@ const initialFormErrors = {
     username: "",
     password: "",
     email: "",
+    avatar: ""
 };
 const initialDisabled = true;
 const initialUsers = [];
@@ -81,7 +82,7 @@ export default function Registration() {
         <div className="signup">
             <Card body bg='info' className='formCardReg'>
                 <h4>Registration</h4>
-                <form className='form' onSubmit={onSubmit} disabled={disabled}>
+                <form className='form' >
                     <InputGroup id='input'>
                         <FormControl
                             placeholder="Username"
@@ -131,7 +132,7 @@ export default function Registration() {
                             type="text"
                         />
                     </InputGroup>
-                    <Button className="submit" variant='primary'>Submit</Button>
+                    <Button className="submit" onClick={onSubmit} variant='primary' disabled={disabled}>Submit</Button>
                     <div className="errors">
                         <div>{formErrors.username}</div>
                         <div>{formErrors.password}</div>
