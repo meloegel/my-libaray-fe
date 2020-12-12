@@ -48,58 +48,78 @@ const AddBook = () => {
         <div id='addBook'>
             <Card body bg='info' className='formCardReg'>
                 <h2>Add A Book</h2>
-                <form id='addBookForm' onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        name="title"
-                        onChange={handleChange}
-                        placeholder="Title"
-                        value={details.title}
-                    />
-                    <div />
-                    <input
-                        type="text"
-                        name="author"
-                        onChange={handleChange}
-                        placeholder="Author"
-                        value={details.author}
-                    />
-                    <div />
-                    <input
-                        type="text"
-                        name="pageCount"
-                        onChange={handleChange}
-                        placeholder="Page Count"
-                        value={details.pageCount}
-                    />
-                    <div />
-                    <input
-                        type="text"
-                        name="yearPublished"
-                        onChange={handleChange}
-                        placeholder="Year Published"
-                        value={details.yearPublished}
-                    />
-                    <div />
-                    <div />
-                    <input
-                        type="text"
-                        name="coverArt"
-                        onChange={handleChange}
-                        placeholder="Cover Art"
-                        value={details.coverArt}
-                    />
-                    <div />
-                    <div />
-                    <input
-                        type="text"
-                        name="description"
-                        onChange={handleChange}
-                        placeholder="Description"
-                        value={details.description}
-                    />
-                    <div />
-                    <div />
+                <form className='form' >
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Title"
+                            aria-label="Title"
+                            aria-describedby="basic-addon1"
+                            value={details.title}
+                            onChange={handleChange}
+                            name="title"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Author"
+                            aria-label="Author"
+                            aria-describedby="basic-addon1"
+                            value={details.author}
+                            onChange={handleChange}
+                            name="author"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Page Count"
+                            aria-label="Page Count"
+                            aria-describedby="basic-addon1"
+                            value={details.pageCount}
+                            onChange={handleChange}
+                            name="pageCount"
+                            type="number"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Year Published"
+                            aria-label="Year Published"
+                            aria-describedby="basic-addon1"
+                            value={details.yearPublished}
+                            onChange={handleChange}
+                            name="yearPublished"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <FormControl
+                            placeholder="Description"
+                            aria-label="Description"
+                            aria-describedby="basic-addon1"
+                            value={details.description}
+                            onChange={handleChange}
+                            name="description"
+                            type="text"
+                        />
+                    </InputGroup>
+                    <InputGroup id='input'>
+                        <InputGroup.Prepend className='inputPrepend'>
+                            <InputGroup.Text id="basic-addon3">
+                                https://
+                                        </InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            placeholder="Cover Art"
+                            aria-label="Cover Art"
+                            aria-describedby="basic-addon1"
+                            value={details.coverArt}
+                            onChange={handleChange}
+                            name="coverArt"
+                            type="link"
+                        />
+                    </InputGroup>
                     <input
                         id='idInput'
                         type="text"
@@ -107,9 +127,7 @@ const AddBook = () => {
                         onChange={handleChange}
                         value={userId.userId}
                     />
-                    <div />
-                    <br />
-                    <button className="add-button">Add New Book</button>
+                    <Button className="add-button" onClick={handleSubmit}>Add New Book</Button>
                 </form>
             </Card>
         </div>
