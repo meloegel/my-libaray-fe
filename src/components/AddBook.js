@@ -46,7 +46,7 @@ const AddBook = () => {
 
     return (
         <div id='addBook'>
-            <Card body bg='info' className='formCardReg'>
+            <Card body bg='info' className='formCardAddBook'>
                 <h2>Add A Book</h2>
                 <form className='form' >
                     <InputGroup id='input'>
