@@ -8,7 +8,7 @@ import UserProfile from './components/UserProfile/UserProfile'
 
 import Login from './components/UserProfile/Login'
 import Registration from './components/UserProfile/Registration'
-import PrivateRoute from './components/PrivateRoute'
+import PrivateRoute from './utils/PrivateRoute'
 import BookList from './components/MyLibraryBookList'
 import AddBook from './components/AddBook'
 
